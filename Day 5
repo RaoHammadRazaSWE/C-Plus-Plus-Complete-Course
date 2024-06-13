@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+int main(){
+int a,b, sum = 0;
+cout<<"Enter number of a "<<endl;
+cin>>a;
+cout<<"Enter number of b "<<endl;
+cin>>b;
+sum = a+b;
+cout<<"sum of numbers "<<sum;  
+}
+// no 2
+float 3.4,4.6
+char A,D
+Boolean True or false_type
+
+
+// #include<iostream>
+
+// using namespace std;
+
+// int main()
+// {
+//     int rows = 10;  // Adjust the number of rows
+//     int columns = 20;  // Adjust the number of columns
+
+//     for(int i = 1; i <= rows; i++) {
+//         for(int j = 1; j <= columns; j++) {
+//             cout << "*";
+//         }
+//         cout << endl;
+//     }
+
+    
+//     return 0;
+// }

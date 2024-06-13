@@ -1,0 +1,50 @@
+/* include<iostream>
+using namespace std;
+int add();
+
+int main(){
+int sum;
+sum = add();
+cout<<"add is "<<sum;    
+retrun 0;
+}
+int add(){
+    int a,b,c;
+    cout<<"enter two no"<<endl;
+    cin>>a>>b;
+    c= a+b;
+    return c;
+} */
+
+
+#include<iostream>
+using namespace std;
+class integer{
+    int x;
+    int y;
+    public:
+    integer(){
+// Do nothing constructor
+    }
+    integer(int x1,int y1){
+        x = x1;
+        y = y1;
+    }
+    integer(integer &m)
+    {
+        x = m.x;
+        y = m.y;
+    }
+    void show(){
+        cout<<" x is = "<<x<<endl;
+        cout<<" y is = "<<y<<endl;
+    }
+};
+int main(){
+    integer j(10,20);
+    integer i(j);
+    integer k= j;
+    j.show();
+    k.show();
+    return 0;
+}

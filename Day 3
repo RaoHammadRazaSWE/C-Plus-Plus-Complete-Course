@@ -1,0 +1,56 @@
+//cout<<"Hello rao";//string as it print ho jay ga
+//: colon
+// ch:no3 conditional strucutures
+// Control Structure: A statement used to control the flow of execution in a program is called control structure.
+//types of control structures
+1) Sequential structure
+//1,3,4,5,6,//statement all run ho gi
+2) Conditional structure
+1) if 2) if else 3) if else if 4) Switch
+3) Iterative structue
+a) While loop b) do while loop c) for loop
+//Relation operator
+<,>,= =,>=,<=,!=
+ 1) Question Difference Between 
+== , =
+  2) Relational Expression
+for example a = 5 and b = 10
+  Relational               Result
+   a>b                     false
+   b>a                     True 
+if Statement
+syntax // method
+if(condition){
+  statement 1;
+  statement 2;
+  .
+  .
+  .
+  statement n;
+}
+*** Pass ***
+1) Program
+#include<iostream>
+using namespace std;
+int main(){
+  int marks;
+  cout<<"Enter you marks :";
+  cin>>marks;
+  if(marks>=40)
+    cout<<"Congratulations you have passed the exam";
+  return 0;
+}
+// *** Square ***
+// 2) Program
+#include<iostream>
+using namespace std;
+int main() {
+  int a,b;
+  cout<<"Enter a number :";
+  cin>>a;
+  cout<<"Enter a number:";
+  cin>>b;
+  if(a*a == b)
+  cout<<"2nd number is square of 1st number ";
+   return 0;
+} rao shab

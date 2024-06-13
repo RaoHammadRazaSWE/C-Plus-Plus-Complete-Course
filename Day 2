@@ -1,0 +1,56 @@
+// increment operator:
+
+// prefix : in prefix form the increment operator is written before the variable as follows:
+// #include <iostream>
+// using namespace std;
+// int main() {
+//   int a,b,x,y;
+//   a=b=x=y=0;//a =0
+//   ++a; //a++ a=1
+//   b=a; //b = 1
+//   ++x;
+//   y = x;
+//   cout << "a="<<endl<<"b="<<b<<endl;
+//   cout << "x="<<endl<<"y="<<y<<endl;
+//   return 0;
+// }
+ //in prefix form the increment operator is written after the variable as follows:
+// #include <iostream>
+// using namespace std;
+// int main() {
+//   int a,b,x,y;
+//   a=b=x=y=0;//a =0
+//   a++; //a++ a=1
+//   b=a; //b = 1
+//   x++;
+//   y = x;
+//   cout << "a="<<endl<<"b="<<b<<endl;
+//   cout << "x="<<endl<<"y="<<y<<endl;
+//   return 0;
+// }
+// // Decrement operator
+// //two forms
+// //prefix form
+// //--y;
+// //postfix form
+// //y--;
+// var 
+// a = 40;
+// constant
+1)Literal constant  3.14,
+2)Integer constant 56,-7,
+// b = 4;
+#include <iostream>
+using namespace std;
+int main() {
+  int len,bth,area;
+  cout<<"Enter length of rectangle :";
+  cin>>len;
+cout<<"Enter bteadth of rectangle :";
+  cin>>bth;
+  area = len*bth;
+  cout<<"area of rectangle:"<<area;
+  
+
+   return 0;
+}

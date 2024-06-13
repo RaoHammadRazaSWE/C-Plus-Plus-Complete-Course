@@ -1,0 +1,51 @@
+ /* #include <iostream>
+  using namespace std; 
+  ADD()
+  int main() {
+  int a,b,sum=0;
+  cout << "enter a number of a "<<endl;
+  cin>>a;
+  cout<<"enter a number of  b"<<endl;
+  cin>>b;
+  sum = a+b;
+  cout<<"sum of numbers "<<sum;
+  return 0;
+}*/
+Data_type
+int a = 5;
+float 4.6;
+char a,d, 
+boolean true or false
+syntax for  declaring variables
+Data_type variable_name = value
+  int        a              30
+  Two types of var
+1) Local variables
+2) Global variales
+c++ data types:
+1)Built_in datatype  int, float,char
+2)User_defined        struct,Union, Enum
+3) Derived            Array,function, pointer
+Rules 5  declare varables in c++
+ 1)1 to 255
+2)alphabet, underscore(_)
+  3)s u m
+4)  if , for, int,
+  5) operator -,+ no use in var name
+6) Meaningful name in var
+Operator
+  types of operators
+1) Arithematic operators  +,-, *, /,%
+2) Assigment operators int a = 3, b=50
+3) comparison operators
+(a==b),(a!=b),(a<b)
+3=<5
+(a=<b),(a>b)
+4) Logical operator
+((a == b) && (a<b)) is : <<((a==b) && (a<b))
+  ((a == b) && (a<b)) is : <<((a==b) || (a<b))
+  # increment operator  
+  prefix form
+++y;
+  postfix form
+y++;

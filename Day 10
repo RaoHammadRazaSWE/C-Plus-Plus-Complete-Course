@@ -1,0 +1,84 @@
+// Vectors
+
+#include <iostream>
+using namespace std;
+ 
+class vector
+{
+    public:
+        int *arr;
+        int size;
+        vector(int m)
+        {
+            size = m;
+            arr = new int[size];
+        }
+    int dotProduct(vector &v){
+        int d=0;
+        for (int i = 0; i < size; i++)
+        {
+            d+=this->arr[i]*v.arr[i];
+        }
+        return d;
+    }
+};
+ 
+int main()
+{
+    vector v1(3); //vector 1
+    v1.arr[0] = 4;
+    v1.arr[1] = 3;
+    v1.arr[2] = 1;
+    vector v2(3); //vector 2
+    v2.arr[0]=1;
+    v2.arr[1]=0;
+    v2.arr[2]=1;
+    int a = v1.dotProduct(v2);
+    cout<<a<<endl;
+    return 0;
+}
+
+// Vector in some useres:
+
+#include<iostream>
+#include<vector>
+using namespace std;
+template <class T>
+void display(vector<T> &v){
+    cout<<"dislaying this vector "<<endl;
+//void display(vector<int> &v){
+    for (int i = 0; i < v.size(); i++)
+    {
+        cout<<v[i]<<" ";
+//cout<<v.at(i)<<" ";// Nubmer ko repate krna k liya for EX 112233
+    }
+    cout<<endl;
+}
+int main(){
+    //ways to create a vector
+    vector<int> vec1;//zero length interger vector
+    
+    int element, size=5;
+    /*cout<<"Enter the size of your vector = ";
+    cin>>size;
+    for (int i = 0; i < size; i++)
+    {
+        cout<<"Enter an element to add to this vector: ";
+        cin>>element;
+        vec1.push_back(element);
+    }
+    vec1.pop_back();//  Last element movers*/
+    //display(vec1); 
+    //vector<int> :: iterator iter = vec1.begin();
+    //vec1.insert(iter+1,566);//any nunber write in this place chanege
+   //display(vec1); 
+   //vector<char> vec2(4);//4-element character vector
+    //vec2.push_back('5');
+    //display(vec2);
+    //vector<char> vec3(vec2);//4-element character vector from vec2
+    //display(vec3);
+    vector<int> vec4(4,13);//6-element vector of 3s
+    display(vec4);  
+    cout<<vec4.size();
+    return 0;
+}

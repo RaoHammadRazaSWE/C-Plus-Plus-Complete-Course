@@ -1,0 +1,169 @@
+// Question No :1
+#include <iostream>
+using namespace std;
+int main() {
+    const int SIZE = 10;
+    int array1[SIZE];
+    int array2[SIZE];
+    int count = 0;
+
+    cout << "Enter 10 integers: " << std::endl;
+
+    // Input data into array1
+    for (int i = 0; i < SIZE; i++) {
+        cout << "Enter value " << (i + 1) << ": ";
+        cin >> array1[i];
+    }
+
+    // Find even numbers and copy them to array2
+    for (int i = 0; i < SIZE; i++) {
+        if (array1[i] % 2 == 0) {
+            array2[count] = array1[i];
+            count++;
+        }
+    }
+
+    // Display array2
+    std::cout << "Even numbers in the array are: ";
+    for (int i = 0; i < count; i++) {
+        cout << array2[i] << " ";
+    }
+    cout <<endl;
+
+    return 0;
+}
+
+// Question No: 2
+
+#include <iostream>
+#include <climits>
+
+using namespace std;
+
+int maxSubArray(int arr[], int size) {
+    int maxSum = INT_MIN, currSum = 0;
+    
+    for(int i = 0; i < size; i++) {
+        currSum += arr[i];
+        if(currSum > maxSum)
+            maxSum = currSum;
+        if(currSum < 0)
+            currSum = 0;
+    }
+    
+    return maxSum;
+}
+
+int main() {
+    int arr[] = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+    int size = sizeof(arr)/sizeof(arr[0]);
+    
+    int maxSum = maxSubArray(arr, size);
+    
+    cout << "Maximum Subarray Sum: " << maxSum << endl;
+    
+    return 0;
+}
+
+// Question No: 3
+
+#include<iostream>
+using namespace std;
+
+int main() {
+    const int SIZE = 10;
+    int arr1[SIZE], arr2[SIZE], max1, min1, max2, min2;
+    
+    // Input the first array
+    cout << "Enter the first array:" << endl;
+    for(int i = 0; i < SIZE; i++) {
+        cin >> arr1[i];
+    }
+    
+    // Input the second array
+    cout << "Enter the second array:" << endl;
+    for(int i = 0; i < SIZE; i++) {
+        cin >> arr2[i];
+    }
+    
+    // Calculate maximum and minimum of the first array
+    max1 = arr1[0];
+    min1 = arr1[0];
+    for(int i = 1; i < SIZE; i++) {
+        if(arr1[i] > max1) {
+            max1 = arr1[i];
+        }
+        if(arr1[i] < min1) {
+            min1 = arr1[i];
+        }
+    }
+    
+    // Calculate maximum and minimum of the second array
+    max2 = arr2[0];
+    min2 = arr2[0];
+    for(int i = 1; i < SIZE; i++) {
+        if(arr2[i] > max2) {
+            max2 = arr2[i];
+        }
+        if(arr2[i] < min2) {
+            min2 = arr2[i];
+        }
+    }
+    
+    // Output results
+    cout << "Maximum of the first array: " << max1 << endl;
+    cout << "Minimum of the first array: " << min1 << endl;
+    cout << "Maximum of the second array: " << max2 << endl;
+    cout << "Minimum of the second array: " << min2 << endl;
+    
+    return 0;
+}
+
+# Question No:4
+
+#include <iostream>
+#include <string>
+
+int main() {
+    std::string sentence;
+
+    std::cout << "Enter a sentence: ";
+    std::getline(std::cin, sentence);
+
+    int wordCount = 1; // Initialize word count to 1
+
+    for (char ch : sentence) {
+        if (ch == ' ') {
+            wordCount++;
+        }
+    }
+std::cout << "Number of words in the sentence: "
+ << wordCount << std::endl;
+
+    return 0;
+}
+
+//  Question No:5
+
+#include <iostream>
+
+int main() {
+    double num1, num2, sum;
+
+    // Prompt the user to enter the first number
+    std::cout << "Enter the first number: ";
+    std::cin >> num1;
+
+    // Prompt the user to enter the second number
+    std::cout << "Enter the second number: ";
+    std::cin >> num2;
+
+    // Calculate the sum
+    sum = num1 + num2;
+
+    // Display the result
+    std::cout << "The sum of " << num1 << " and " << num2 << " is: " << sum << std::endl;
+
+    return 0;
+}
+

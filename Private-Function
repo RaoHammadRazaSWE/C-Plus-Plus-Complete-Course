@@ -1,0 +1,26 @@
+
+#include<iostream>
+using namespace std;
+class sample
+{
+    private:
+    void read();
+    public:
+    void display();
+
+};
+void sample::read()
+{
+    cout<<"i am in private";
+
+}
+void sample::display()
+{
+    cout<<"i am in public "<<endl;
+    read();
+}
+int main(){
+    sample s;
+    s.display(); 
+    return 0;
+}

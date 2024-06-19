@@ -1,0 +1,22 @@
+//class k bahar member function write krna 
+#include<iostream>
+using namespace std;
+template <class t>
+class Rao{
+    public:
+    t data;
+    Rao(t a){
+    data = a;
+    }
+    void display();
+};
+template <class t>
+void Rao<t>:: display(){
+    cout<<data;
+}
+int main(){
+    Rao<int> h(34);
+    cout<<h.data<<endl;
+    h.display();
+    return 0;
+}

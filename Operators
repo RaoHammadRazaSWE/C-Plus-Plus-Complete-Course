@@ -1,0 +1,90 @@
+// new and delete operator:
+#include<iostream>
+using namespace std;
+
+int main(){
+  int * p;
+  cout<<"enter no ";
+  p = new int;
+  cin>>*p;
+  cout<<"no is = "<<*p;
+  delete p; 
+    return 0;
+}
+
+// Operator Overloading:
+
+#include<iostream>
+using namespace std;
+class space {
+    int x;
+    int y;
+    int z;
+    public:
+    space()
+    {
+
+    }
+    space(int x1,int y1,int z1)
+    {
+        x = x1; y = y1; z = z1;
+    }
+    void operator -()
+    {
+        x = -x;
+        y = -y;
+        z = -z;
+    }
+    void show(){
+        cout<<" x is = "<<x<<endl;
+        cout<<" y is = "<<y<<endl;
+        cout<<" z is = "<<z;
+    }
+};
+int main(){
+    space s(10,39,34);
+    s.show();
+    -s;
+    cout<<"          ";
+    cout<<"\n offer applying newdefinition"<<endl;
+    s.show();
+    return 0;
+}
+
+// Overloading Assignment Operator:
+
+
+#include<iostream>
+using namespace std;
+class integer{
+    int x;
+    int y;
+    public:
+    integer()
+    {
+
+    }
+    integer(int x1,int y1)
+    {
+        x = x1;
+        y = y1;
+    }
+    void operator=(integer &m){
+        x = m.x;
+        y = m.y;
+    }
+    void show()
+    {
+        cout<<"\nx is = "<<x;
+        cout<<"\ny is = "<<y;
+    }
+    };
+    
+int main(){
+    integer j(10,20);
+    integer i;
+i = j;
+j.show();
+i.show();
+    return 0;
+}

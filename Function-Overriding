@@ -1,0 +1,73 @@
+// Example no : 1
+#include<iostream>
+using namespace std;
+class Base1
+{
+    public:
+    void display()
+    {
+        cout<<"i am in base 1"<<endl;
+    
+    }
+};
+class Base2
+{
+    public:
+    void display()
+    {
+    cout<<"i am in base2"<<endl;
+    }
+};
+class der:public Base1,public Base2
+{
+    public:
+    void display()
+    {
+        cout<<" i am in der class"<<endl;
+    }
+};
+int main(){
+  der d;
+  d.display();  
+  d.Base1:: display();
+  d.Base2 ::display();
+    return 0;
+  }
+
+  // Example no : 2
+
+#include<iostream>
+using namespace std;
+class Base1
+{
+    public:
+    void display()
+    {
+        cout<<"i am in base1"<<endl;
+    
+    }
+};
+class Base2
+{
+    public:
+    void display()
+    {
+    cout<<"i am in base2"<<endl;
+    }
+};
+class der:public Base1,public Base2
+{
+    public:
+    void display()
+    {
+        cout<<" i am in der class"<<endl;
+         Base1::display();
+         Base2::display();
+    }
+};
+int main(){
+  der d;
+  d.display();  
+    return 0;
+  }
+  

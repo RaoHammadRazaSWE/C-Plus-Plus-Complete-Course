@@ -1,0 +1,47 @@
+// Qno: 1
+
+#include <iostream>
+using namespace std;
+ 
+void func(int a){
+    cout<<"I am first func() "<<a<<endl;
+}
+ 
+template<class T>
+void func(T a){
+    cout<<"I am templatised func() "<<a<<endl;
+}
+int main()
+{
+    func(4);  //Exact match takes the highest priority
+    return 0;
+}
+
+//   Qno:2
+
+// Function overloading 
+#include<iostream>
+using namespace std;
+void sum(int,int);
+float sum(float,float);
+int main(){
+int x,y,z;
+float i=2.3,j=3.7,k;
+x = 10;
+y = 20;
+sum(x,y);
+k = sum(i,j);
+cout<<"the sum is "<<k<<endl;    
+    return 0;
+}
+void sum(int x,int y){
+    int s;
+    s = x+y;
+    cout<<"sum is "<<s<<endl;
+}
+float sum(float i,float j)
+{
+    float k;
+    k = i+j;
+    return k;
+}

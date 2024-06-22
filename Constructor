@@ -1,0 +1,288 @@
+// Initialize list over section in constructor :
+
+#include<iostream>
+using namespace std;
+class Test
+{
+    int a;
+    int b;
+
+public:
+    Test(int i, int j) : a(i), b(j)
+    {
+        cout << "Constructor executed"<<endl;
+        cout << "Value of a is "<<a<<endl;
+        cout << "Value of b is "<<b<<endl;
+    }
+};
+
+int main()
+{
+    Test t(4, 6);
+
+    return 0;
+}
+
+
+// Parameterized Constructors :
+
+#include<iostream>
+using namespace std;
+class interger
+{
+    int x;
+    int y;
+    public:
+    interger(int x1,int y1)//parameterized
+    {
+        x = x1;
+        y = y1;
+        }
+        void show(){
+            cout<<"x is = "<<x<<endl;
+            cout<<"y is = "<<y<<endl;
+
+        
+    }
+};
+int main(){
+    interger j(10,20);
+    interger k=interger(100,200);
+    j.show();
+    k.show();
+    return 0;
+}
+
+// Type of Constructor :
+
+#include<iostream>
+using namespace std;
+class interger
+{
+    int x;
+    int y;
+    public:
+    interger(int x1,int y1)//parameterized
+    {
+        x = x1;
+        y = y1;
+        }
+        void show(){
+            cout<<"x is = "<<x<<endl;
+            cout<<"y is = "<<y<<endl;
+
+        
+    }
+};
+int main(){
+    interger j(10,20);
+    interger k=interger(100,200);
+    j.show();
+    k.show();
+    return 0;
+}
+
+// Dynamic constructor :
+
+#include<iostream>
+using namespace std;
+class integer 
+{
+    int *x;
+    int *y;
+    public:
+    integer(){
+    }
+    integer (int x1,int y1){
+        x = new int;
+        *x = x1;
+        y = new int;
+        *y = y1;
+    }
+    void add(){
+        int sum = *x + *y;
+        cout<<" sum is = "<<sum<<endl;
+    }
+};
+int main(){
+    integer j(10,20);
+    j.add();
+    return 0;
+}
+
+// Destructor Constructor :
+
+#include<iostream>
+using namespace std;
+class integer
+{
+    int x;
+    int y;
+    public:
+integer()
+{
+
+}
+integer(int x1,int y1)
+{
+    x = x1;
+    y = y1;
+}
+~integer()//destructor
+{
+    cout<<" Exit "<<endl;
+    cout<<" Exit "<<endl;
+    cout<<" Exit "<<endl;
+}
+void show()
+{
+    cout<< "x is ="<<x<<endl;
+    cout<<" y is ="<<y<<endl;
+}
+};
+int main(){
+    integer j(10,30);
+    j.show();
+    return 0;
+}
+
+// Constructor Default Argument :
+
+#include<iostream>
+using namespace std;
+class integer{
+    int x;
+    int y;
+    public:
+    integer(){ // Do nothing constructor
+    }
+    integer(int x1,int y1 = 30){ // Parameterized constructor
+        x=x1;
+        y=y1;
+    }
+    void show(){
+        cout<<"x is = "<<x<<endl;
+        cout<<"y is = "<<y<<endl;
+    }
+    };
+    int main(){
+        integer i;
+        integer j(10);// call constructor defaul
+        i.show();
+        j.show();
+
+    }
+
+// Example :
+
+#include <iostream>
+using namespace std;
+
+class Alpha {
+  int x;
+
+public:
+  Alpha(int x1) {
+    x = x1;
+    cout << "alpha initialized" << endl;
+  }
+
+  void showx() {
+    cout << "x is = " << x << endl;
+  }
+};
+
+class Beta {
+  int y;
+
+public:
+  Beta(int y1) {
+    y = y1;
+    cout << "beta initialized" << endl;
+  }
+
+  void showy() {
+    cout << "y is = " << y << endl;
+  }
+};
+
+class Gamma : public Alpha, public Beta {
+  int m, n;
+
+public:
+  Gamma(int a, int b, int c, int d) : Alpha(a), Beta(b) {
+    m = c;
+    n = d;
+    cout << "gama initialized" << endl;
+  }
+
+  void showmn() {
+    cout << "m is = " << m << endl;
+    cout << "n is = " << n << endl;
+  }
+};
+
+int main() {
+  Gamma g(10, 20, 30, 40);
+  g.showx();
+  g.showy();
+  g.showmn();
+  return 0;
+}
+
+// Constructors in Derived Class :
+
+#include<iostream>
+using namespace std;
+class Base1{
+    int data1;
+    public:
+        Base1(int i){
+            data1 = i;
+            cout<<"Base1 class constructor called"<<endl;
+        }
+        void printDataBase1(void){
+            cout<<"The value of data1 is "<<data1<<endl;
+        }
+};
+
+class Base2{
+    int data2;
+
+    public:
+        Base2(int i){
+            data2 = i;
+            cout << "Base2 class constructor called" << endl;
+        }
+        void printDataBase2(void){
+            cout << "The value of data2 is " << data2 << endl;
+        }
+};
+
+class Derived: public Base1, public Base2{
+    int derived1, derived2;
+    public:
+        Derived(int a, int b, int c, int d) : Base2(b), Base1(a)
+        {
+            derived1 = c;
+            derived2 = d;
+            cout<< "Derived class constructor called"<<endl;
+        }
+        void printDataDerived(void)
+        {
+            cout << "The value of derived1 is " << derived1 << endl;
+            cout << "The value of derived2 is " << derived2 << endl;
+        }
+};
+
+int main(){
+    
+    Derived Rao(1, 2, 3, 4);
+    Rao.printDataBase1();
+    Rao.printDataBase2();
+    Rao.printDataDerived();
+    
+
+
+    return 0;
+}

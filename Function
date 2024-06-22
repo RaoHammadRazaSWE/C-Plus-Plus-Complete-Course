@@ -1,0 +1,159 @@
+// Function Templates :
+
+
+#include<iostream>
+using namespace std;
+/*float funcAverage(int a,float b){
+    float avg =(a+b)/2.0;
+    return avg;
+}*/
+template<class t1,class t2>
+float funcAverage2(t1 a,t2 b){
+    float avg = (a+b)/2.0;
+    return avg;
+}
+int main(){
+    float a;
+    a = funcAverage2(9,3.5);
+    printf("The average of these numbers is %.3f",a);
+    return 0;
+}
+
+// Function Objects :
+
+#include<iostream>
+#include<functional>
+#include<algorithm>
+using namespace std;
+
+int main(){
+    //Function objects (Functor) : A functi
+    int arr[] ={1,35,0,4,64,32};
+    sort(arr,arr+6);
+    //sort( arr, arr+6, greater< int >( ));
+    for(int i = 0;i<6;i++){
+        cout<<arr[i]<<endl;
+    }
+    return 0;
+}
+
+// Object as Function Argument :
+
+#include<iostream>
+using namespace std;
+class weight{
+    int kg;
+    int grm;
+    public:
+    void getdata();
+    void showdata();
+    void adddata(weight w1,weight w2);
+};
+    void weight::getdata()
+    {
+        cout<<"enter kg and grm = ";
+        cout<<"     ";
+        cin>>kg>>grm;}
+        void weight::showdata(){
+            cout<<" kg  is = "<<kg<<endl;
+            cout<<" grm is = "<<grm<<endl;
+        }
+    void weight::adddata(weight w1,weight w2){
+    grm=w1.grm+w2.grm;
+    kg = grm/1000;
+    grm = grm%1000;
+    kg = kg+w1.kg+w2.kg;}
+int main(){
+    weight w1,w2,w3;
+    w1.getdata();
+    w2.getdata();
+    w3.adddata(w1,w2);
+    w1.showdata();
+    w2.showdata();
+    w3.showdata();
+    return 0;
+}
+
+// Nesting of Member Function :
+
+#include<iostream>
+using namespace std;
+
+class Greater {
+    int a, b;
+    public:
+    void getData();
+    int largest();
+    void display();
+};
+
+void Greater::getData() {
+    cout << "Enter two numbers: "<<endl;
+    cin >> a >> b;
+}
+
+int Greater::largest() {
+    if (a > b)
+        return a;
+    else
+        return b;
+}
+
+void Greater::display() {
+    cout << "Largest number is: " << largest();
+}
+
+int main() {
+    Greater G;
+    G.getData();
+    G.display();
+    return 0;
+}
+
+// Friend Function :
+
+#include<iostream>
+using namespace std;
+class sample{
+    int a,b;
+    public:
+    void getdata(int i,int j)//definatoin of friends function 
+    {
+    a=i;
+    b=j;
+    }
+    friend float avg(sample s);
+};
+float avg(sample s)
+{
+return float(s.a + s.b)/2.0;
+}
+int main(){
+  sample s;
+  s.getdata(40,8);
+  cout<<"The avg is "<<avg(s);  
+    return 0;
+}
+
+// Default Arguments :
+
+#include<iostream>
+using namespace std;
+class sample{
+    int x,y;
+    public:
+    void getdata(int x1,int y1 =23){
+    x = x1;
+    y = y1;    
+    }
+    void showdata(){
+        cout<<" x is = "<<x<<endl;
+        cout<<" y is = "<<y<<endl;
+    }
+};
+int main(){
+   sample s;
+   s.getdata(10);
+   s.showdata(); 
+    return 0;
+}

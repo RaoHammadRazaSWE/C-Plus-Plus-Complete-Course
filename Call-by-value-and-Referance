@@ -1,0 +1,48 @@
+/* call by value 
+#include<iostream>
+using namespace std;
+void swap(int, int);
+int main(){
+    int a,b;
+    cout<<"enter two no ";
+    cin>>a>>b;
+    swap(a,b);
+    cout<<"a is "<< a ;
+    cout<<"       "<<endl;
+    cout<<"b is "<< b ;
+    return 0;
+}
+void swap(int x,int y){
+int temp;
+temp = x;
+x = y;
+y = temp;
+cout<<"x is "<<x<<endl;
+cout<<"y is "<<y<<endl;
+
+}*/
+//call by reference
+#include<iostream>
+using namespace std;
+void swapr(int*, int*);
+int main(){
+    int a,b;
+    cout<<"enter the no of a ";
+    cin>>a;
+    cout<<"enter the no of b ";
+    cin>>b;
+    swapr(&a,&b);
+    cout<<"a is "<< a ;
+    cout<<"       "<<endl;
+    cout<<"b is "<< b ;
+    return 0;
+}
+void swapr(int*x,int*y){
+int temp;
+temp = *x;
+*x = *y;
+*y = temp;
+cout<<"x is "<<x<<endl;
+cout<<"y is "<<y<<endl;
+
+}

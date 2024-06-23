@@ -1,0 +1,15 @@
+
+#include<iostream>
+using namespace std;
+void fun2(int *y);
+int main(){
+    int x =10;
+    fun2(&x);
+    cout<<"vale of x after call by address "<<x<<endl;
+    return 0;
+}
+void fun2(int *y)
+{
+    *y = *y+10;
+    cout<<" value of y "<<*y<<endl;
+}

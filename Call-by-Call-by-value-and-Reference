@@ -1,0 +1,14 @@
+#include<iostream>
+#include<iostream>
+using namespace std;
+void fun3(int & y);
+int main(){
+int x =10;
+fun3(x);
+cout<<"value of x after call by reference "<<x<<endl;
+    return 0;
+}
+void fun3(int & y){
+    y = y+10;
+    cout<<"y is "<<y<<endl;
+}

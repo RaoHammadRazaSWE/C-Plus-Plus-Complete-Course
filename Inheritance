@@ -1,0 +1,26 @@
+#include<iostream>
+using namespace std;
+class Base
+{
+    public:
+    void display1()
+    {
+        cout<<"i am in base classe "<<endl;
+
+    }
+};
+class der :public Base
+{
+    public:
+    void display2()
+    {
+        cout<<"i am in derived class"<<endl;
+    }
+
+};
+int main(){
+    der d;
+    d.display1();
+    d.display2();
+    return 0;
+}

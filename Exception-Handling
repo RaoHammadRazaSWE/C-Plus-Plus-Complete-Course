@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+int main(){
+    int a,b;
+    cout<<"Enter values of a  ";
+    cin>>a;
+    cout<<"Enter values of b  ";
+    cin>>b;
+    int d = a-b;
+    try
+    {
+      if (d!= 0)  {
+        cout<<"divided = "<<a/d<<endl;
+      }
+        else{
+        throw(d);
+      }
+    }
+    catch (int i)
+    {
+        cout<<"divide by zero"<<i;
+    }
+        cout<<"End";
+    return 0;
+}

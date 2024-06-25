@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+class base
+{
+    private:
+    void display1(){
+        cout<<"i am in private Base "<<endl;
+    }
+    public:
+    void display2(){
+        cout<<"i am in publice Base "<<endl;
+    }
+    protected:
+        void display3(){
+            cout<<"i am in protedted Base"<<endl;
+        }};
+    class der:public base
+    {
+        public:
+        void display4()
+        {
+            cout<<"i am in derived class "<<endl;
+        }
+    };
+int main(){
+     der d;
+    //d.display1();
+    d.display2();
+    //d.display3();
+    d.display4();
+    return 0;
+}

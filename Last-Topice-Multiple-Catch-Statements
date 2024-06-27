@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+void mtest(int x)
+{
+    try{
+        if(x==1) throw x;
+        else 
+        if(x==0) throw 'x';
+    }
+    catch (int m)
+    {
+        cout<<"caught an integer ";
+    }
+}
+int main(){
+    cout<<"x = = 1"<<endl;
+    mtest(1);
+    cout<<"x = = 0 "<<endl;
+    mtest(0);
+
+    return 0;
+}

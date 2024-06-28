@@ -1,0 +1,104 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+class simplecalculator{
+    protected:
+    double num1,num2;
+    public:
+    void getinput(){
+       cout<<"Enter number one :";
+       cin>>num1;
+       cout<<"Enter number two  :";
+       cin>>num2; 
+    }
+    void additon(){
+    cout<<num1<<"+"<<num2<<"="<<num1+num2<<endl;
+    }
+    void subtraction(){
+    cout<<num1<<"-"<<num2<<"="<<num1-num2<<endl;
+    }
+    void multiplication(){
+    cout<<num1<<"*"<<num2<<"="<<num1*num2<<endl;
+    }
+    void division(){
+    if(num2 == 0){
+      cout<<"division by zero "<<endl;  
+    }
+    else{
+        cout<<num1<<"/"<<num2<<"="<<num1/num2<<endl;
+    }
+    }
+};
+class scientificCalulator{
+    protected:
+    double num1,num2;
+    public:
+    void scientificGetinput(){
+       cout<<"Enter number one :";
+       cin>>num1;
+       cout<<"Enter number two  :";
+       cin>>num2;  
+    }
+    void square(){
+       cout<<"square of "<<num1<<"="<<pow(num1,2)<<endl;
+       cout<<"square of "<<num2<<"="<<pow(num2,2)<<endl;  
+    }
+    void cube(){
+       cout<<"cube of "<<num1<<"="<<pow(num1,3)<<endl;
+       cout<<"cube of "<<num2<<"="<<pow(num2,3)<<endl;
+    }
+    void power(){
+        cout<<num1<<"raised to "<<num2<<"="<<pow(num1,num2)<<endl;
+    }
+    void squareRoot(){
+        cout<<"square root of "<<num1<<"="<<sqrt(num1)<<endl;
+        cout<<"square root of "<<num2<<"="<<sqrt(num2)<<endl;
+    }
+    void sine(){
+        cout<<"sine of "<<num1<<"="<<sin(num1)<<endl;
+        cout<<"sine of "<<num2<<"="<<sin(num2)<<endl;
+    }
+    void cosine(){
+        cout<<"cosine of "<<num1<<"="<<cos(num1)<<endl;
+        cout<<"cosine of "<<num2<<"="<<cos(num2)<<endl;
+    }
+    void tangent(){
+        cout<<"tangent of "<<num1<<"="<<tan(num1)<<endl;
+        cout<<"tangent of "<<num2<<"="<<tan(num2)<<endl;
+    }
+    void logarithm(){
+        cout<<"logarithm of "<<num1<<"="<<log10(num1)<<endl;
+        cout<<"logarithm of "<<num2<<"="<<log10(num2)<<endl;
+    }
+};
+class HybridCalculator: public simplecalcualter,public scientificCalculator{
+public: 
+   void displaysimplecalculations(){
+    getinput();
+    addition();
+    subtraction();
+    multiplication();
+    division();
+    }   
+  void diplayscientificaCalculations(){
+  scientificGetinput();
+  square();
+  cube();
+  power();
+  squarRoot();
+  sine();
+  cosine();
+  tangent();
+  logarithm();
+  }
+};
+int main(){
+    Hybridcalculator calc;
+    //simple calculator
+    cout<<"simple calculator:"<<endl;
+    calc.displaysimpleCalcualtions();
+    //scientific calculator
+    cout<<"\nscientific Calculator:"<<endl;
+    calc.displayscientificCalculationsS();
+    return 0;
+}

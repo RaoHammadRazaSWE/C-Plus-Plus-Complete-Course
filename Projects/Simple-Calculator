@@ -1,0 +1,35 @@
+    #include<iostream>
+    using namespace std;
+    int main(){
+    int num1, num2;
+    char x;
+    while (true)
+    {
+    cout<<"Enter number one = ";
+    cin>>num1;
+    cout<<"             "<<endl;
+    cout<<"Enter number two = ";
+    cin>>num2;
+    cout<<" ......"<<endl;
+    cout<<"press a for addition "<<endl;
+    cout<<"press b for sub "<<endl;
+    cout<<"press c for division "<<endl;
+    cout<<"press d for multiplicaton "<<endl;
+    cout<<"press e for remainder "<<endl;
+    cout<<"......"<<endl;
+    cin>>x;
+    if(x=='a')
+    cout<<"the sum of number = "<<num1 + num2 <<endl;
+    else if(x=='b')
+    cout<<"the sub of number = "<<num1 - num2 <<endl;  
+    else if (x=='c')
+    cout<<"the multiplication of number = "<<num1 * num2 <<endl;
+    else if (x=='d') 
+    cout<<"the division of number = "<<num1 / num2 <<endl;
+    else if (x=='e') 
+    cout<<"the remainder of number = "<<num1 % num2 <<endl;
+    else
+    cout<<"Invalid operation " <<endl;  
+    } 
+    return 0;
+    }

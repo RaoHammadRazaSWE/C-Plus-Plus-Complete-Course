@@ -1,0 +1,112 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+char board[3][3];
+
+void draw_board() {
+    cout << "-------------" << endl;
+    for (int i = 0; i < 3; i++) {
+        cout << "| ";
+        for (int j = 0; j < 3; j++) {
+            cout << board[i][j] << " | ";
+        }
+        cout << endl << "-------------" << endl;
+    }
+}
+
+bool is_valid_move(int row, int col) {
+    if (row < 0 || row >= 3 || col < 0 || col >= 3) {
+        return false;
+    }
+    if (board[row][col] != ' ') {
+        return false;
+    }
+    return true;
+}
+
+bool is_game_over(char player) {
+    // Check rows
+    for (int i = 0; i < 3; i++) {
+        if (board[i][0] == player && board[i][1] == player && board[i][2] == player) {
+            return true;
+        }
+    }
+    // Check columns
+    for (int j = 0; j < 3; j++) {
+        if (board[0][j] == player && board[1][j] == player && board[2][j] == player) {
+            return true;
+        }
+    }
+    // Check diagonals
+    if (board[0][0] == player && board[1][1] == player && board[2][2] == player) {
+        return true;
+    }
+    if (board[0][2] == player && board[1][1] == player && board[2][0] == player) {
+        return true;
+    }
+    // Check for tie
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            if (board[i][j] == ' ') {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+void computer_move() {
+    int row, col;
+    do {
+        row = rand() % 3;
+        col = rand() % 3;
+    } while (!is_valid_move(row, col));
+    board[row][col] = 'O';
+}
+
+void player_move() {
+    int row, col;
+    cout << "Enter row and column (1-3): ";
+    cin >> row >> col;
+    row--;
+    col--;
+    if (!is_valid_move(row, col)) {
+        cout << "Invalid move, try again." << endl;
+        player_move();
+    }
+    else {
+        board[row][col] = 'X';
+    }
+}
+
+int main() {
+    srand(time(NULL));
+    cout << "Welcome to Tic Tac Toe!" << endl;
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            board[i][j] = ' ';
+        }
+    }
+    draw_board();
+    while (!is_game_over('X') && !is_game_over('O')) {
+        player_move();
+        draw_board();
+        if (is_game_over('X')) {
+            cout << "You win!" << endl;
+            break;
+        }
+        computer_move();
+        draw_board();
+        if (is_game_over('O')) {
+            cout << "Computer wins!" << endl;
+            break;
+        }
+    }
+    if (!is_game_over('X') && !is_game_over('O')) {
+cout << "It's a tie!" << endl;
+}
+return 0;
+}

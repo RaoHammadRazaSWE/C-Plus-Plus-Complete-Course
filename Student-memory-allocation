@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+class student {
+    int roll[10];
+    int fee[10];
+    int year;
+public:
+    void inityear(void) { year = 0; }
+    void setfee(void);
+    void displayfee(void);
+};
+
+void student::setfee(void) {
+    cout << "Enter the roll number of student: ";
+    cin >> roll[year];
+    cout << "Enter the fee of student: ";
+    cin >> fee[year];
+    year++;
+}
+
+void student::displayfee(void) {
+    for (int i = 0; i < year; i++) {
+        cout << "The fee of student with roll number " << roll[i] << " is " << fee[i] << endl;
+    }
+}
+
+int main() {
+    student a;
+    a.inityear();
+    a.setfee();
+    a.displayfee();
+    return 0;
+}

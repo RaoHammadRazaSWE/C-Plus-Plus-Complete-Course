@@ -1,0 +1,33 @@
+
+#include<iostream>
+using namespace std;
+class Employee
+{
+private:
+int a,b,c;
+
+public:
+int d,e; 
+void setData(int a, int b, int c);
+void getData(){
+     cout<<"the valud of a is "<<a<<endl;
+     cout<<"the valud of b is "<<b<<endl;
+     cout<<"the valud of c is "<<c<<endl;
+     cout<<"the valud of d is "<<d<<endl;
+     cout<<"the valud of e is "<<e<<endl;
+    
+}   
+};
+void Employee :: setData(int a1, int b1, int c1){
+    a = a1;
+    b = b1;
+    c = c1;
+}
+int main(){
+    Employee ali;
+    ali.d = 32;
+    ali.e = 34;
+    ali.setData(1,2,4);
+    ali.getData();
+    return 0;
+}

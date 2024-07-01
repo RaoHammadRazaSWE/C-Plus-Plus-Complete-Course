@@ -1,0 +1,33 @@
+
+#include<iostream>
+using namespace std;
+class student
+{
+private:
+int A,B,C;
+
+public:
+int D,E; 
+void setData(int A, int B, int C);
+void getData(){
+     cout<<"The Roll number of Ali is "<<A<<endl;
+     cout<<"The Roll number of Hammad is "<<B<<endl;
+     cout<<"The Roll number of Attullah is "<<C<<endl;
+     cout<<"The Roll number of Raza is "<<D<<endl;
+     cout<<"The Roll number of Nazir is "<<E<<endl;
+    
+}   
+};
+void student :: setData(int A1, int B1, int C1){
+    A = A1;
+    B = B1;
+    C = C1;
+}
+int main(){
+    student Roll;
+    Roll.D = 37;
+    Roll.E = 45;
+    Roll.setData(12,30,35);
+    Roll.getData();
+    return 0;
+}

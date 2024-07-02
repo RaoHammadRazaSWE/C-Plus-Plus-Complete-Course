@@ -1,0 +1,122 @@
+// Example no : 1
+
+#include<iostream>
+using namespace std;
+
+class Student{
+    protected:
+        int roll_no;
+    public:
+        void set_number(int a){
+            roll_no = a;
+        }
+        void print_number(void){
+            cout<<"Your roll no is "<< roll_no<<endl;
+        }
+};
+
+class Test : public Student{
+    protected:
+        float maths, physics;
+        public:
+            void set_marks(float m1, float m2){
+                maths = m1;
+                physics = m2;
+            }
+
+            void print_marks(void){
+                cout << "You result is here: "<<endl
+                     << "Maths: "<< maths<<endl
+                     << "Physics: "<< physics<<endl;
+            }
+};
+
+class Sports: public Student{
+    protected:
+        float score;
+    public:
+        void set_score(float sc){
+            score = sc;
+        }
+
+        void print_score(void){
+            cout<<"Your PT score is "<<score<<endl;
+        }
+
+};
+
+class Result : public Test, public Sports{
+    private:
+        float total;
+    public:
+        void display(void){
+            total = maths + physics + score;
+            print_number();
+            print_marks();
+            print_score();
+            cout<< "Your total score is: "<<total<<endl;
+        }
+};
+int main(){
+    Result harry;
+    harry.set_number(4200);
+    harry.set_marks(78.9, 99.5);
+    harry.set_score(9);
+    harry.display();
+    return 0;
+}
+
+
+// Example no : 2
+
+
+#include<iostream>
+using namespace std;
+class complex {
+    int a, b;
+    public:
+void setnumber(int n1,int n2){
+    a = n1;
+    b = n2;
+}
+void printnumber(){
+    cout<<"your number is "<<a<<" + "<<b<<" i "<<endl;
+}
+};
+int main(){
+    complex c1,c2;
+    c1.setnumber(1,4);
+    c2.setnumber(5,8);
+    return 0;
+}
+
+// Example no : 3
+
+#include<iostream>
+using namespace std;
+
+class Complex{
+    int real, imaginary;
+    public:
+        void getData(){
+            cout<<"The real part is "<< real<<endl;
+            cout<<"The imaginary part is "<< imaginary<<endl;
+        }
+
+        void setData(int a, int b){
+            real = a;
+            imaginary = b;
+        }
+
+};
+int main(){
+    Complex *ptr = new Complex;
+    ptr->setData(1, 54);
+    ptr->getData(); 
+
+    // Array of Objects
+    Complex *ptr1 = new Complex[4]; 
+    ptr1->setData(1, 4); 
+    ptr1->getData();
+    return 0;
+}

@@ -1,0 +1,22 @@
+ #include<iostream>
+using namespace std;
+int main ()
+{ 
+    int age;
+    cout<<"enter the age = ";
+    cin>>age;
+  switch (age)
+  {
+    case 18:
+    cout<<" your 18"<<endl;
+    break;
+    case 22:
+    cout<<"YOUR 22"<<endl;
+    break;
+    default:
+    cout<<"no special cases"<<endl;
+    break;
+  }
+  cout<<"Done whith swithch case";
+    return 0;
+}

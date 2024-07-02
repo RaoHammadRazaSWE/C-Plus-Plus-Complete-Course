@@ -1,0 +1,37 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int a,b;
+    cout<<"................"<<endl;
+    cout<<"ENTERA A NUMBER a = ";
+    cin>>a;
+     cout<<"ENTERA A NUMBER b = ";
+    cin>>b;
+    cout<<"Arithemetic Operators"<<endl; 
+    cout<<"................"<<endl;
+    cout<<"The value of a+b is ="<<a+b<<endl;
+    cout<<"The value of a-b is ="<<a-b<<endl;
+    cout<<"The value of a*b is ="<<a*b<<endl;
+    cout<<"The value of a/b is ="<<a/b<<endl;
+    cout<<"The value of a%b is ="<<a%b<<endl;
+    cout<<"The value of a++ is ="<<a++<<endl;
+    cout<<"The value of a-- is ="<<a--<<endl;
+    cout<<"................"<<endl;
+    cout<<"Comparison Operators"<<endl;
+    cout<<"................"<<endl;
+    cout<<"The value of a==b is ="<<(a==b)<<endl;
+    cout<<"The value of a!=b is ="<<(a!=b)<<endl;
+    cout<<"The value of a>=b is ="<<(a>=b)<<endl;
+    cout<<"The value of a<=b is ="<<(a<=b)<<endl;
+    cout<<"The value of a<b is ="<<(a<b)<<endl;
+    cout<<"The value of a>b is ="<<(a>b)<<endl;
+    cout<<"The value of ++a is ="<<++a<<endl;
+    cout<<"................"<<endl;
+    cout<<"Logical Opertas"<<endl;
+    cout<<"................"<<endl;
+    cout<<"The value of logical oprator  ((a==b) &&  (a<b)) is  : "<<((a==b) &&  (a<b)) <<endl;
+    cout<<"The value of logical oprator  ((a==b) || (a<b)) is  : "<<((a==b) || (a<b)) <<endl;
+    cout<<"The value of logical oprator  (!(a==b) )is  : "<<(!(a==b))<<endl;
+    return 0;
+}

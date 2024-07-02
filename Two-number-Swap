@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+
+int main(){
+   /** int a,b,temp;
+cout<<"enter the of a = ";
+cin>>a;
+cout<<"enter the of b = ";
+cin>>b;
+    temp = a;
+    a = b;
+    b = a;
+    cout<<"the number of swap = "<<temp;
+    */
+    return 0;
+}
+
+// Find odd number.
+
+
+#include<iostream>
+using namespace std;
+int main(){
+int i,n=10;
+for(n=1;n<=10;n=n+2)
+
+cout<<"\n"<<n;    
+    return 0;
+}

@@ -1,0 +1,139 @@
+  /*
+Create 2 classes:
+1. SimpleCalculator - Takes input of 2 numbers using a 
+utility function and performs
++, -, *, / and displays the results using another function. 
+2. ScientificCalculator - Takes input of 2 numbers using a utility
+function and performs any four scientific operations of your choice and 
+displays the results using another function.
+    Create another class HybridCalculator and inherit it using these 2 classes:
+    Q1. What type of Inheritance are you using?
+    Q2. Which mode of Inheritance are you using?
+    Q3. Create an object of HybridCalculator and display results 
+    of the simple and scientific calculator.
+    Q4. How is code reusability implemented?
+*/
+// ANSWER ALL FOLLING QUESTION.
+/*A1. We are using Multiple Inheritance,.
+
+A2. We are using public mode of Inheritance for both SimpleCalculator
+and ScientificCalculator, as the derived class HybridCalculator should be 
+able to access all public members of its base classes.
+
+A3. The code above creates an object of HybridCalculator named "calc" and 
+displays the results of both Simple Calculator and Scientific Calculator.
+
+A4. Code reusability is implemented
+
+*/
+#include <iostream>
+#include <cmath>
+using namespace std;
+//SimpleCalculator class
+class SimpleCalculator {
+protected:
+    double num1, num2;
+public:
+    void getInput() {
+        cout << "Enter numbers one : ";
+        cin >> num1;
+        cout << "Enter numbers two : ";
+        cin >> num2;
+    }
+    void addition() {
+        cout << num1 << " + " << num2 << " = " << num1 + num2 << endl;
+    }
+    void subtraction() {
+        cout << num1 << " - " << num2 << " = " << num1 - num2 << endl;
+    }
+    void multiplication() {
+        cout << num1 << " * " << num2 << " = " << num1 * num2 << endl;
+    }
+    void division() {
+        if (num2 == 0) {
+            cout << "Error: Division by zero." << endl;
+        } else {
+            cout << num1 << " / " << num2 << " = " << num1 / num2 << endl;
+        }
+    }
+};
+//ScientificCalculator class
+class ScientificCalculator {
+protected:
+    double num1, num2;
+public:
+    void scientificGetInput() {
+        cout << "Enter numbers one : ";
+        cin >> num1;
+        cout << "Enter numbers two : ";
+        cin >> num2;
+    }
+    void square() {
+        cout << "Square of " << num1 << " = " << pow(num1, 2) << endl;
+    cout << "Square of " << num2 << " = " << pow(num2, 2) << endl;
+    }
+    void cube() {
+        cout << "Cube of " << num1 << " = " << pow(num1, 3) << endl;
+        cout << "Cube of " << num2 << " = " << pow(num2, 3) << endl;
+    }
+    void power() {
+        cout << num1 << " raised to " << num2 << " = " << pow(num1, num2) << endl;
+    }
+    void squareRoot() {
+        cout << "Square root of " << num1 << " = " << sqrt(num1) << endl;
+        cout << "Square root of " << num2 << " = " << sqrt(num2) << endl;
+    }
+    void sine() {
+        cout << "Sine of " << num1 << " = " << sin(num1) << endl;
+        cout << "Sine of " << num2 << " = " << sin(num2) << endl;
+    }
+    void cosine() {
+        cout << "Cosine of " << num1 << " = " << cos(num1) << endl;
+        cout << "Cosine of " << num2 << " = " << cos(num2) << endl;
+    }
+    void tangent() {
+        cout << "Tangent of " << num1 << " = " << tan(num1) << endl;
+        cout << "Tangent of " << num2 << " = " << tan(num2) << endl;
+    }
+    void logarithm() {
+        cout << "Logarithm (base 10) of " << num1 << " = " << log10(num1) << endl;
+        cout << "Logarithm (base 10) of " << num2 << " = " << log10(num2) << endl;
+    }
+};
+
+// HybridCalculator class
+class HybridCalculator: public SimpleCalculator, public ScientificCalculator {
+public:
+    void displaySimpleCalculations() {
+        getInput();
+        addition();
+        subtraction();
+        multiplication();
+        division();
+    }
+    void displayScientificCalculations() {
+        scientificGetInput();
+        square();
+        cube();
+        power();
+        squareRoot();
+        sine();
+        cosine();
+        tangent();
+        logarithm();
+    }
+};
+
+int main() {
+    HybridCalculator calc;
+
+    // Simple Calculator
+    cout << "Simple Calculator:" << endl;
+    calc.displaySimpleCalculations();
+
+    // Scientific Calculator
+    cout << "\nScientific Calculator:" << endl;
+    calc.displayScientificCalculations();
+
+    return 0;
+}

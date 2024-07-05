@@ -1,0 +1,38 @@
+#include<iostream>
+using namespace std;
+struct employee
+{
+    int eid;
+    char favchar;
+    float salary;
+    
+};
+union money
+{
+    int rice;
+    char car;
+    float pounds;
+    
+};
+int main(){
+    enum Meal{breakfast,lunch,dinner};
+
+    //Meal m1 = lunch;
+    //cout<<m1;
+    //Meal m1 = breakfast;
+    //cout<<m1; 
+    Meal m1 =dinner;
+    cout<<m1;
+    //struct employee rao;
+    //union money m1;
+    //m1.rice = 34;
+    //cout<<m1.rice<<endl;
+    //rao.eid =2;
+    //rao.favchar ='c';
+    //rao.salary = 120000;
+
+///cout<<"the value is ="<<rao.eid<<endl;
+///cout<<"the value is ="<<rao.favchar<<endl;
+//cout<<"the value is ="<<rao.salary<<endl;
+    return 0;
+}

@@ -1,0 +1,20 @@
+#include<iostream>
+using namespace std;
+typedef struct employee
+{
+    int eid;
+    char favchar;
+    float salary;
+    
+} ep;
+int main(){
+    ep rao;
+    rao.eid =2;
+    rao.favchar ='c';
+    rao.salary = 120000;
+
+cout<<"the value is ="<<rao.eid<<endl;
+cout<<"the value is ="<<rao.favchar<<endl;
+cout<<"the value is ="<<rao.salary<<endl;
+    return 0;
+}

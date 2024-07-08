@@ -1,0 +1,72 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Teacher {
+  // Properties / Attributes
+private:
+  double salary;
+
+public:
+  string name;
+  string dept;
+  string subject;
+
+  // Methods / Member functions
+  void changeDept(string newDept) {
+    dept = newDept;
+  }
+
+  // Setter method for salary
+  void setSalary(double newSalary) {
+    salary = newSalary;
+  }
+
+  // Getter method for salary
+  double getSalary() {
+    return salary;
+  }
+};
+
+class Student {
+public:
+  string name;
+  int rollno;
+  int age;
+};
+
+int main() {
+  // Teacher Object
+  Teacher t1;
+  t1.name = "Rao";
+  t1.subject = "Maths";
+  t1.dept = "Computer";
+  t1.setSalary(5000);
+
+  // Output the Teacher details
+  cout << "Teacher Details:" << endl;
+  cout << "Name: " << t1.name << endl;
+  cout << "Subject: " << t1.subject << endl;
+  cout << "Department: " << t1.dept << endl;
+  cout << "Salary: " << t1.getSalary() << endl;
+
+  // Change the department
+  t1.changeDept("Physics");
+
+  // Output the updated department
+  cout << "Updated Department: " << t1.dept << endl;
+
+  // Student Object
+  Student s1;
+  s1.name = "John";
+  s1.rollno = 101;
+  s1.age = 20;
+
+  // Output the Student details
+  cout << "\nStudent Details:" << endl;
+  cout << "Name: " << s1.name << endl;
+  cout << "Roll No: " << s1.rollno << endl;
+  cout << "Age: " << s1.age << endl;
+
+  return 0;
+}

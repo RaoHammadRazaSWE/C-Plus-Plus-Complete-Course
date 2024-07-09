@@ -1,0 +1,56 @@
+// Opps are foure mager piller :
+// 1) Encapsulaition.
+// 2) Abstraction.
+// 3) Inheritance.
+// 4) Polymorphism.
+ 
+
+// 1) Encapsulation: is Wrapping up of data & member function in a single unit called class.
+
+#include <iostream>
+using namespace std;
+
+class Account {
+private:
+  string password;
+  double balance;
+
+public:
+  string accountId;
+  string username;
+
+  // Member function to set the password
+  void setPassword(string pwd) {
+    password = pwd;
+  }
+
+  // Member function to get the password
+  string getPassword() const {
+    return password;
+  }
+
+  // Member function to set the balance
+  void setBalance(double bal) {
+    balance = bal;
+  }
+
+  // Member function to get the balance
+  double getBalance() const {
+    return balance;
+  }
+};
+
+int main() {
+  Account a1;
+  a1.username = "Hammad";
+  a1.accountId = "123";
+  a1.setPassword("securepassword");
+  a1.setBalance(1000.0);
+
+  cout << "Username: " << a1.username << endl;
+  cout << "AccountId: " << a1.accountId << endl;
+  cout << "Password: " << a1.getPassword() << endl;
+  cout << "Balance: $" << a1.getBalance() << endl;
+
+  return 0;
+}

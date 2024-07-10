@@ -1,0 +1,82 @@
+// # There are two type of Copy Creation 1. Shallow Copy 2. Deep Copy.
+
+// Shallow Copy: A shallow copy of an object copies all of the memeber valuees from one object to another.
+
+// Deep Copy: A deep copy , on the other hand, not only copies the member values, but also makes copies of any dynamically allocated allocated memory that the members point to.
+
+// Simple uses Shallow:
+
+// #include <iostream>
+// using namespace std;
+// class Student {
+// public:
+//     string name;
+//     double cgpa;
+
+//   Student(Student &obj){
+//     this->name = obj.name;
+//     this->cgpa = obj.cgpa;
+//   }
+
+//     Student(string name, double cgpa){
+//       this->name = name;
+//       this->cgpa = cgpa;
+//     }
+
+//     void getInfo() {
+//       cout << "name :" << name <<endl;
+//       cout << "cgpa :" << cgpa <<endl;
+//     }
+// };
+
+// int main() {
+//     Student s1("Rao", 3.4);
+//     // s1.getInfo();
+//    // now we are wanted to copy the s1 object to s2:
+//     Student s2 = s1;
+//     s2.getInfo();
+//   return 0;
+// }
+
+// Uses Deep copy:
+
+#include <iostream>
+using namespace std;
+class Student {
+public:
+    string name;
+    double* cgpaPtr;
+
+    Student(string name, double cgpa){
+      this->name = name;
+      cgpaPtr = new double;
+      *cgpaPtr = cgpa;
+    }
+
+// Copy COnstructor:
+    Student(Student &obj){
+      this->name = obj.name;
+      cgpaPtr = new double;
+      *cgpaPtr = *obj.cgpaPtr;
+    }
+    void getInfo() {
+      cout << "name :" << name <<endl;
+      cout << "cgpa :" << *cgpaPtr <<endl;
+    }
+};
+
+int main() {
+    Student s1("Rao", 3.4);
+    // s1.getInfo();
+   // now we are wanted to copy the s1 object to s2:
+    Student s2 = s1;
+   
+    // s1.getInfo();
+    *(s2.cgpaPtr) = 9.5;
+    s1.getInfo();
+
+    s2.name = "Raza";
+    s2.getInfo();
+  
+  return 0;
+}

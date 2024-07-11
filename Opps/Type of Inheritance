@@ -1,0 +1,185 @@
+// #include <iostream>
+// using namespace std;
+
+// class Person {
+// public:
+//     string name;
+//     int age;
+
+
+//     Person (string name, int age) {
+//       this->name = name;
+//       this->age = age;
+//     }
+// };
+
+//  // This is single Iheritance :
+// class student : private Person {
+// public:
+
+//   int rollno;
+
+//   student(string name, int age, int rollno) : Person( name, age){
+//     this->rollno = rollno;
+//   }
+
+
+//   void getInfo(){
+//     cout << "name: " <<name <<endl;
+//     cout << "age: " <<age <<endl;
+//     cout << "rollno: " <<rollno <<endl;
+//   }
+// };
+
+// Multi-level Iheritance:
+// #include <iostream>
+// using namespace std;
+
+// class Person {
+// public:
+//     string name;
+//     int age;
+// };
+
+
+// class student : public Person {
+// public:
+
+//   int rollno;
+// };
+
+// class Gradstudent : public student{
+//   public:
+//   string researchArea;
+// };
+
+// int main() {
+//   Gradstudent s1;
+//   s1.name = "Rao";
+//   s1.researchArea = "Quantum physics";
+//   cout<< s1.name  << endl;
+//   cout<< s1.researchArea << endl;
+  
+//   return  0;
+// }
+
+// Multiple Inheritance:
+
+// #include <iostream>
+// using namespace std;
+
+// class Student {
+// public:
+//     string name;
+//     int rollno;
+// };
+
+// class Teacher {
+// public:
+//     string subject;
+//     double salary;
+// };
+
+// class TA : public Student, public Teacher {
+
+// };
+
+// int main() {
+//     TA t1;
+//     t1.name = "Rao";
+//     t1.subject = "Computer Science";
+
+//     cout << "Name: " << t1.name << endl;
+//     cout << "Subject: " << t1.subject << endl;
+
+//     return 0;
+// }
+
+// Hierarchial Inheritance:
+
+// #include <iostream>
+// using namespace std;
+
+// class Person {
+// public:
+//     string name;
+//     int age;
+// };
+
+// class Student : virtual public Person {
+// public:
+//     int rollno;
+// };
+
+// class Teacher : virtual public Person {
+// public:
+//     string subject;
+// };
+
+// class TA : public Student, public Teacher {
+
+// };
+
+// int main() {
+//     TA t1;
+//     t1.name = "Rao";
+//     t1.subject = "Computer Science";
+
+//     cout << "Name: " << t1.name << endl;
+//     cout << "Subject: " << t1.subject << endl;
+
+//     return 0;
+// }
+
+// Hybrid Inheritance:
+
+#include <iostream>
+using namespace std;
+
+// Base class
+class Person {
+public:
+    string name;
+    int age;
+
+    // Constructor
+    Person(string n = "", int a = 0) : name(n), age(a) {}
+};
+
+// Derived class from Person
+class Student : virtual public Person {
+public:
+    int rollno;
+
+    // Constructor
+    Student(string n = "", int a = 0, int r = 0) : Person(n, a), rollno(r) {}
+};
+
+// Derived class from Person
+class Teacher : virtual public Person {
+public:
+    string subject;
+
+    // Constructor
+    Teacher(string n = "", int a = 0, string s = "") : Person(n, a), subject(s) {}
+};
+
+// Derived class from both Student and Teacher
+class TA : public Student, public Teacher {
+public:
+    // Constructor
+    TA(string n = "", int a = 0, int r = 0, string s = "") : Person(n, a), Student(n, a, r), Teacher(n, a, s) {}
+};
+
+int main() {
+    // Create a TA object
+    TA t1("Rao", 25, 101, "Computer Science");
+
+    // Accessing attributes
+    cout << "Name: " << t1.name << endl;
+    cout << "Age: " << t1.age << endl;
+    cout << "Roll No: " << t1.rollno << endl;
+    cout << "Subject: " << t1.subject << endl;
+
+    return 0;
+}

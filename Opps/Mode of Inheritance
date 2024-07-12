@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+
+class Person {
+public:
+    string name;
+    int age;
+
+
+    Person (string name, int age) {
+      this->name = name;
+      this->age = age;
+    }
+};
+    
+
+class student : private Person {
+public:
+
+  int rollno;
+
+  student(string name, int age, int rollno) : Person( name, age){
+    this->rollno = rollno;
+  }
+
+ 
+  void getInfo(){
+    cout << "name: " <<name <<endl;
+    cout << "age: " <<age <<endl;
+    cout << "rollno: " <<rollno <<endl;
+  }
+};
+
+int main() {
+
+  student s1("Rao" , 20, 34);
+  s1.getInfo();
+
+  cout << s1.name;
+  return  0;
+}

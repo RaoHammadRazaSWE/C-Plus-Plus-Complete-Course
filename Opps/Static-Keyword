@@ -1,0 +1,49 @@
+// Static Keyword: 
+// Static Variables: Variables declared as static in a function are created & initialised once for the lifetime of the program. // in Function.
+
+// Static variables in a class are created & initialised once. They are shared by all the objects of the class. // in Class.
+
+
+// #include <iostream>
+// using namespace std;
+
+// void fun(){
+//   static int x = 0; // init statement - 1 run.
+//   cout << "x :" << x << endl;
+//   x++;
+  
+// }
+
+// int main() {
+//   fun();
+//   fun();
+//   fun();
+//   return 0;
+// }
+
+// Statoc Objects:
+
+#include <iostream>
+using namespace std;
+
+class ABC {
+public:
+  ABC(){
+    cout << "Constructor \n";
+  }
+
+  ~ABC(){
+    cout << "Donstructor \n";
+  }
+};
+
+int main() {
+  if(true){
+    static ABC obj;
+  }
+
+  cout <<"End of main \n";
+  return 0;
+}
+
+// If any one interest Read Friends function and friends calls.

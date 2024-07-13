@@ -1,0 +1,28 @@
+// Abstraction: Hiding all unnecessary details from & showing only the important parts.
+
+// Using Abstract Classes:
+
+// 1, Abstract classes are used to provide a base class from which other classes can be derived.
+// 2. They cannot be instandiated and are meant to be inherited .
+// 3. Abstract clases are typicall uded to define on interface for derived classes.
+
+#include <iostream>
+using namespace std;
+
+  class Shap { // Abstract class.
+    virtual  void draw() = 0; // Pure virtual function.
+  };
+
+  class Circle : public Shap {
+     public:
+       void draw() {
+          cout<<"Drawing a circle\n";
+       }
+    
+  };
+
+int main() {
+  Circle c1;
+  c1.draw();
+  return 0;
+}
